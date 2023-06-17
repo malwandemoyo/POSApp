@@ -23,19 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n2$(iqj_dea%zenwi(!zzdqrxl*srit62#*iqvq#e8w8z50%uy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = []
-CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = ['.vercel.app']
 
-
-# ALLOWED_HOSTS = [
-#     "127.0.0.1",
-# ]
-
-# CORS_ALLOWED_ORIGINS = [
-#     "http://127.0.0.1", 
-# ]
 
 CORS_ALLOW_CREDENTIALS = False
 
@@ -94,10 +85,14 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'neondb',
+    'USER': 'qasperkopolo',
+    'PASSWORD': '5zfXDyAw8OUV',
+    'HOST': 'ep-flat-mouse-568931.us-east-2.aws.neon.tech',
+    'PORT': '5432',
+  }
 }
 
 
