@@ -1,0 +1,30 @@
+{% load static%}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <form method="POST" action="{% url 'category-change' %}" id="commonForm">
+        {% csrf_token %}
+        <ul>
+            {% for category in categories%}
+            <div id="myDiv" class="">
+                <li >
+                    <div id="tabs">
+                        <input type="hidden" value="{{ common }}">
+                        <button><h1 class="magriza">{{category}}</h1></button>                                                                   
+                    </div>
+
+                </li>
+            </div>
+            {% endfor %}
+            <h1 id="category">
+                {{ common }}
+            </h1>
+        </ul>
+    </form>
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+#myDiv{
+    margin: 20px;
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.active{
+    color: #d91b42;
+    border-bottom:2px solid #d91b42;
+    padding-bottom: 8px;   
+    text-color: #d91b42;
+}
+
+.active > h1{
+    color: #d91b42;
+}
+
+button{
+    appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+
+    outline: none;
+
+    border: none;
+    background: none;
+}

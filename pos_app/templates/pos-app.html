@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+
+{% block content%}
+
+{% include 'categories.html'%}
+
+{{ common }}
+
+{% for item in products %}
+{% for category in categories %}
+
+
+
+{%if item.category == category%}
+
+<div>
+    <h1>{{item.name}}</h1>
+    <h2>{{item.category}}</h2>
+    <h2>{{item.price}}</h2>
+    <img src="{{ item.image.url }}" alt="Image" class="img-responsive" style="max-width: 36px; max-height: 100px;">
+</div>
+{% endif %}
+{% endfor %}
+{% endfor%}
+
+{% endblock content %}

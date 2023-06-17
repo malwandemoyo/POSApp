@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+{% block content%}
+{% comment %} <h1>Dashboard Manyama</h1> {% endcomment %}
+    
+    <div class="col-md-10 col-12 mx-auto mt-5">
+        <div class="d-flex justify-content-end">
+            <a href="{% url 'faka' %}" class="btn btn-primary">Add Item</a>
+        </div>
+
+        <table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">IMG</th>
+						<th scope="col">Name</th>
+						<th scope="col">Qty</th>
+						<th scope="col">Price(US$)</th>
+						<th scope="col">Category</th>
+						<!-- <th scope="col"></th>
+						<th scope="col"></th> -->
+					</tr>
+				</thead>
+				<tbody>
+					{% if items|length == 0 %}
+					<tr>
+						<th scope="row">-</th>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<!-- <td>-</td> -->
+						<!-- <td></td> -->
+					</tr>
+                {% endif %}
+
+                {% for item in items %}
+                <tr>
+                    <th scope="row">{{ item.id }}</th>
+					{% comment %} <td>{{ item.image }}</td> {% endcomment %}
+					<td>
+						<img src="{{ item.image.url }}" alt="Image" class="img-responsive" style="max-width: 36px; max-height: 100px;">
+					 </td>
+					 
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+					<td>{{ item.price }}</td>
+                    <td>{{ item.category.name }}</td>
+					<td><a href="{% url 'change' item.id%}">Update Item</a></td>
+					<td><a href="{% url 'khipha' item.id%}">Khipha Item</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content%}
