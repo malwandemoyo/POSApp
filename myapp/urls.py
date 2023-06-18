@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pos_app/', include('pos_app.urls')),
     path('inventory_man/', include("inventory_man.urls")),
+    path('/', include("inventory_man.urls")),
+    
     # path('myshop/', include("myshop.urls")),
     # path('api-auth/', include('rest_framework.urls')),
 ]
