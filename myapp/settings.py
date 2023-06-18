@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n2$(iqj_dea%zenwi(!zzdqrxl*srit62#*iqvq#e8w8z50%uy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app']
 
@@ -87,11 +87,12 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'neondb',
-    'USER': 'qasperkopolo',
-    'PASSWORD': '5zfXDyAw8OUV',
-    'HOST': 'ep-flat-mouse-568931.us-east-2.aws.neon.tech',
-    'PORT': '5432',
+    'NAME': 'railway',
+    'USER': 'postgres',
+    'PASSWORD': 'uh4LfbPJClzaK6qxukMC',
+    'HOST': 'containers-us-west-48.railway.app',
+
+    'PORT': '8072',
   }
 }
 
